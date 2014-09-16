@@ -1,5 +1,5 @@
 library(shiny)
-crimeData <- read.csv("CrimeData.csv");
+crimeData <- read.csv("CrimeData.csv")
 
 # Define server logic for slider examples
 shinyServer(function(input, output) {

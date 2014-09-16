@@ -1,0 +1,43 @@
+US Crime Statistics
+========================================================
+author: Tom Miller  
+date: `r date()`  
+
+FBI: Uniform Crime Reporting Statistics
+========================================================  
+
+```{r echo=FALSE}
+setwd("shiny")
+crimeData = read.csv("CrimeData.csv")
+```
+The data for this project was extract
+from the FBI web site: **http://www.ucrdatatool.gov/index.cfm**.
+Crime rates for all 50 states from 1960-2012 were minimal processed and `r nrow(crimeData)` records loaded into R from a csv file. The total US rates are calculated from the summary and detail rates are available:
+
+- Violent crime summary
+  - Murder/manslaughter, Rape, Robbery, Assult
+- Property crime summary
+  - Burglary, Larceny, Auto Theft
+
+Data Analysis
+========================================================
+- The ability to write all the plot code is time consuming
+- Crime rates had peaked in US the late 1980s and early 1990s.
+- Crime rates in the US has been going down since its peak in the late 1980s and early 1990s.
+- Crime rates in poor states Alabama, Mississippi, Arkansas
+and Alaska continue to be much greater then the US average
+
+Example of plot code
+========================================================
+```{r echo=TRUE}
+#  Plot Data
+plot(crimeData$Year[crimeData$State=="Alaska"], crimeData$Violent.crime.rate[crimeData$State=="Alaska"], xlab="Year",ylab ="Violent Crime",main="Crime Rate per 100,000",type="b",pch=1,col="blue")
+```
+
+Conculsions
+========================================================
+The benefits of the shiny application allow the user to explore the data without any programming efforts. The data is presented as a business intelligence method allowing the user to change dimensions time, state and crime to view the outputs. All the states data, crime and time are always compare to the national averate to make sense of the information. This type of interface makes it quite easy for a non-technical person to view the infromation.
+***https://terrordata.shinyapps.io/shiny/***
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
